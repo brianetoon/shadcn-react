@@ -5,13 +5,27 @@ import {
   CardFooter,
   CardHeader,
   CardTitle 
-} from "./ui/card"
+} from "@/components/ui/card"
+
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage
+} from "@/components/ui/avatar"
+
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 
 export default function RecipeCard({ recipe }) {
   return (
     <Card className="flex flex-col justify-between">
       <CardHeader className="flex-row gap-4 items-center">
-        {/* avatar */}
+        <Avatar>
+          <AvatarImage src={`/img/${recipe.image}`} />
+          <AvatarFallback>
+            {recipe.title.slice(0,2)}
+          </AvatarFallback>
+        </Avatar>
         <div>
           <CardTitle>{recipe.title}</CardTitle>
           <CardDescription>{recipe.time} to cook.</CardDescription>
@@ -21,8 +35,8 @@ export default function RecipeCard({ recipe }) {
         <p>{recipe.description}</p>
       </CardContent>
       <CardFooter className="flex justify-between">
-        <button>View Recipe</button>
-        {recipe.vegan && <p>Vegan!</p>}
+        <Button variant="secondary">View Recipe</Button>
+        {recipe.vegan && <Badge>Vegan!</Badge>}
       </CardFooter>
     </Card>
   )
