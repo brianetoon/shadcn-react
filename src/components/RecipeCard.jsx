@@ -28,7 +28,7 @@ export default function RecipeCard({ recipe }) {
         </Avatar>
         <div>
           <CardTitle>{recipe.title}</CardTitle>
-          <CardDescription>{recipe.time} to cook.</CardDescription>
+          <CardDescription>{recipe.time} min to cook</CardDescription>
         </div>
       </CardHeader>
       <CardContent>
