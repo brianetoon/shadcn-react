@@ -35,8 +35,8 @@ export default function RecipeCard({ recipe }) {
         <p>{recipe.description}</p>
       </CardContent>
       <CardFooter className="flex justify-between">
-        <Button variant="secondary">View Recipe</Button>
-        {recipe.vegan && <Badge>Vegan!</Badge>}
+        <Button>View Recipe</Button>
+        {recipe.vegan && <Badge variant="secondary">Vegan!</Badge>}
       </CardFooter>
     </Card>
   )
