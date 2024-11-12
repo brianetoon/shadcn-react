@@ -21,7 +21,7 @@ export default function RecipeCard({ recipe }) {
     <Card className="flex flex-col justify-between">
       <CardHeader className="flex-row gap-4 items-center">
         <Avatar>
-          <AvatarImage src={`/img/${recipe.image}`} />
+          <AvatarImage src={`/shadcn-react/img/${recipe.image}`} />
           <AvatarFallback>
             {recipe.title.slice(0,2)}
           </AvatarFallback>

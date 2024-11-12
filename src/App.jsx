@@ -3,7 +3,6 @@ import Header from "./components/Header"
 import RecipeCard from "./components/RecipeCard"
 import Loading from "./components/Loading"
 
-
 function App() {
   const [recipes, setRecipes] = useState([])
   const [isLoading, setIsLoading] = useState(true)
@@ -13,7 +12,7 @@ function App() {
       setIsLoading(true)
 
       try {
-        const res = await fetch('http://localhost:4000/recipes')
+        const res = await fetch('https://brianetoon.github.io/json-data/recipes.json')
 
         if (!res.ok) {
           throw new Error('failed to fetch the data')
@@ -22,7 +21,7 @@ function App() {
         await new Promise(resolve => setTimeout(resolve, 2000))
   
         const data = await res.json()
-        setRecipes(data)
+        setRecipes(data.recipes)
       } catch (error) {
         console.log(error)
       } finally {
